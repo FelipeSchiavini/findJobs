@@ -1,5 +1,5 @@
 
-interface zippiaBodyRequest {
+interface IZippiaBodyRequest {
     companySkills :boolean;
     dismissedListingHashes: Array<any>;
     fetchJobDesc: boolean;
@@ -15,7 +15,7 @@ export const headers: Record<string,string> = {
     'Content-Type': 'application/json',
 }
 
-export const zippiaBodyRequest: zippiaBodyRequest = {
+export const zippiaBodyRequest: IZippiaBodyRequest = {
         "companySkills": true,
         "dismissedListingHashes": [],
         "fetchJobDesc": true,

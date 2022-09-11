@@ -21,7 +21,7 @@ export const Card:React.FunctionComponent<CardProps> = (props) => {
     },[job])
 
     const readDescription = () => {
-        if (read == 500) {
+        if (read === 500) {
             setRead(10000)
             setReadText('Close...')
         }  else {

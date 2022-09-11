@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Border, FontFamily, FontSize, FontWeight, Spacing } from "../constants";
+import { FontFamily, FontSize, FontWeight, Spacing } from "../constants";
 
 export const P = styled.p`
     margin-bottom: ${Spacing.Medium};

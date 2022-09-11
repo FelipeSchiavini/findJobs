@@ -1,14 +1,12 @@
-import axios from 'axios'
-import { useEffect, useState } from 'react'
-import { headers, zippiaUrl, zippiaBodyRequest } from '../../utils/constants'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-grid-system';
-import { Card } from '../card/card';
-import React from 'react';
-import { Job } from './jobs.model';
-import { isNewPostingDate } from '../../utils/dates';
-import Select from 'react-select'
 import { Button } from '../../styles/custom/button';
 import { Selection } from '../../styles/custom/selection';
+import { headers, zippiaBodyRequest, zippiaUrl } from '../../utils/constants';
+import { isNewPostingDate } from '../../utils/dates';
+import { Card } from '../card/card';
+import { Job } from './jobs.model';
 
 
 interface Companies {

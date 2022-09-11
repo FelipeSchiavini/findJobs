@@ -1,6 +1,6 @@
 import {
-    Route, Routes,
-  } from "react-router-dom";
+    Route, Routes
+} from "react-router-dom";
 import { Jobs } from "../components/jobs";
 
 export const ZippiaRoutes = () => {
