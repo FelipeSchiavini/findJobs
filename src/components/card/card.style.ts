@@ -18,6 +18,7 @@ export const CardHeader = styled.div`
 export const CardImage = styled.img`
     width: 60%;
     margin: auto;
+
 `
 
 export const CardDescription = styled.div`
@@ -30,6 +31,9 @@ export const CardImageContainer = styled.div`
     width: 20%;
     justify-content: center;
     text-align: center;
+    @media only screen and (max-width: 480px) {
+        display:none;
+    }
 `
 
 export const CardWrapper = styled.div`
@@ -40,6 +44,10 @@ export const CardWrapper = styled.div`
 
 export const CardInfo = styled.div`
     width: 100%;
+    @media only screen and (max-width: 480px) {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 `
 
 export const CardDate = styled.span`

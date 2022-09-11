@@ -50,14 +50,3 @@ export const Card:React.FunctionComponent<CardProps> = (props) => {
     </CardContainer>
     )
 }
-
-
-
-
-{/* <Row>
-<Col lg={2} xs={12} style={{margin:'auto', marginTop: '20px'}}>
-</Col >
-<Col lg={10} xs={12}>
-    <P  dangerouslySetInnerHTML={{__html: job.OBJdesc}} />
-</Col>
-</Row> */}

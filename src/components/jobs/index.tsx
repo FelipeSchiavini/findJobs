@@ -18,6 +18,7 @@ export const Jobs: React.FunctionComponent = (): JSX.Element => {
     const [data, setData] = useState<Array<Job>>([])
     const [selectedCompany, setSelectedCompany] = useState<Companies[]>([])
     const [allCompanies, setAllCompanies] = useState<Companies[]>([])
+    const [loading, setLoading] = useState<boolean>(true)
 
     const filterLast7Days = (): void => {
         const jobs: Job[] = data.filter((d) => isNewPostingDate(d.OBJpostingDate))
@@ -28,7 +29,7 @@ export const Jobs: React.FunctionComponent = (): JSX.Element => {
         const fetchData = async () => {
             const data = await axios.post(zippiaUrl, zippiaBodyRequest, headers)
             const jobs: Job[] = data.data.jobs
-                        
+                
             const companies = new Set(jobs.filter((j) => j.companyName)) 
             
             const uniqueCompanie: Companies[] = Array.from(companies).map(c => {
@@ -42,9 +43,11 @@ export const Jobs: React.FunctionComponent = (): JSX.Element => {
             setAllCompanies(uniqueCompanie)
         }
         fetchData()
+        setLoading(false)
     }, []);
 
     useEffect(()=> {
+        setLoading(true)
         const fetchData = async () => {
             const data = await axios.post(zippiaUrl, zippiaBodyRequest, headers)
             const jobs: Job[] = data.data.jobs
@@ -55,6 +58,7 @@ export const Jobs: React.FunctionComponent = (): JSX.Element => {
             } else {
                 setData(jobs)
             }
+            setLoading(false)
         }
         fetchData()
     }, [selectedCompany])
@@ -68,8 +72,14 @@ export const Jobs: React.FunctionComponent = (): JSX.Element => {
         setSelectedCompany([])
     }
 
+    if (loading){
+        return(
+            <h1> Loading ..</h1>
+        )
+    }
     
     return (
+
         <Container>
             <Row>
                 <Col xs = {12} lg ={6}>

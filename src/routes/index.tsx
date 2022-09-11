@@ -7,6 +7,7 @@ export const ZippiaRoutes = () => {
     return (
         <Routes>
             <Route path='/test/jobs/' element={<Jobs/>} />
+            <Route path='/' element={<Jobs/>} />
         </Routes>
     )
 }
