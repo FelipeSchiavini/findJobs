@@ -72,11 +72,7 @@ export const Jobs: React.FunctionComponent = (): JSX.Element => {
         setSelectedCompany([])
     }
 
-    if (loading){
-        return(
-            <h1> Loading ..</h1>
-        )
-    }
+    if (loading)  (<h1> Loading ..</h1>)
     
     return (
 
@@ -104,10 +100,11 @@ export const Jobs: React.FunctionComponent = (): JSX.Element => {
                     <Col xs = {12} lg ={6}>
                         <Card job={job}/>
                     </Col>
-                    
+                    { data[index+1]?.jobId &&
                     <Col xs = {12} lg={6}>
                         <Card job={data[index+1]}/>
                     </Col>
+                    }
                 </Row>
                 )
             })}

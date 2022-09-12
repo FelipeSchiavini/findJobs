@@ -34,19 +34,20 @@ export const Card:React.FunctionComponent<CardProps> = (props) => {
     <CardContainer>
         <CardHeader>
         <CardImageContainer>
-            <CardImage src={job.companyLogo ? job.companyLogo : require('../../images/image-not-found.jpg')} alt={job.companyName}/>
+            <CardImage src={job?.companyLogo ? job.companyLogo : require('../../images/image-not-found.jpg')} alt={'image-not-found'}/>
         </CardImageContainer>
         <CardInfo>
-            <H2>{job.jobTitle.toUpperCase()}</H2>
+            <H2>{job?.jobTitle.toUpperCase()}</H2>
             <CardWrapper>
-                <H3>{job.companyName}</H3> 
-                <CardDate>{parseDateToShortString(new Date(job.OBJpostingDate))}</CardDate>
+                <H3>{job?.companyName}</H3> 
+                <CardDate>{parseDateToShortString(new Date(job?.OBJpostingDate))}</CardDate>
             </CardWrapper>
         </CardInfo>
         </CardHeader>
         <CardDescription>
-            <P dangerouslySetInnerHTML={{__html: job.OBJdesc.slice(0, read)}} /> <PStrong onClick={readDescription}>{readText}</PStrong>
+            <P dangerouslySetInnerHTML={{__html: job?.OBJdesc.slice(0, read)}} /> <PStrong onClick={readDescription}>{readText}</PStrong>
         </CardDescription>
     </CardContainer>
     )
 }
+

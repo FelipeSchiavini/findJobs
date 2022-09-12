@@ -46,7 +46,7 @@ export const CardInfo = styled.div`
     width: 100%;
     @media only screen and (max-width: 480px) {
         padding-left: 10px;
-        padding-right: 10px;
+        padding-left: 10px;
     }
 `
 
